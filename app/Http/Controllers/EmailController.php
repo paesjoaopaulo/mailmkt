@@ -45,7 +45,7 @@ class EmailController extends Controller
 
         $lista = Lista::find($request->get('lista'));
         foreach ($lista->clientes() as $cliente) {
-    
+            //Mail::to($cliente->email)->send();
         }
     }
 

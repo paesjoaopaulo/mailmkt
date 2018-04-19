@@ -6,6 +6,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('emails', 'EmailController');
-Route::resource('clientes', 'ClienteController');
-Route::resource('listas', 'ListaController');
+Route::middleware(['auth'])->group(function () {
+	Route::resource('emails', 'EmailController');
+	Route::resource('clientes', 'ClienteController');
+	Route::resource('listas', 'ListaController');
+});
